@@ -1,0 +1,40 @@
+1. WHAT IS A BINDING
+
+- A binding is a way to connect to data within your code, they provide a way to integrate with data consistently.
+- You can have multiple bindings providing access to different data source
+- You don't have to code specific logic to connect to data source
+
+2. Types of bindings
+
+- Input bindings, our function can read data from these data sources
+- Output bindings, our function can write data to these data sources
+- Triggers are special type of input bindings that cause a function to execute
+
+3. Types of supported bindings
+
+- Azure Blob Storage
+- Azure service bus queues
+- Azure Cosmos DB
+- Azure event hub
+- Http endpoints
+- External tables
+- External files
+- Azure IoT
+
+4. Binding properties
+
+- Name: identifies the function parameter
+- Type: defines the type of binding
+- Direction: determines whether it's input or output binding
+- Connection: provide the name of the app setting that contains the connection string. Bindings use connection strings stored in app settings to keep secrets out of the function code. This makes your code more configurable and secure.
+
+5. Creating a binding
+
+- Binding are created in the function.json file
+{
+    "name": "myblobstorage",
+    "type" : "blob",
+    "direction": "in",
+    "path": "pathToBlobStorage/{filename}",
+    "connection": "connectionToBlob"
+}
