@@ -1,0 +1,26 @@
+0. Use case
+
+- Suppose your company has a manual approval process for project design proposals. You want to automate the process, but still involve humans. As a requirement, the workflow solution that you implement needs to be able to orchestrate activities of varying duration and should be cost effective. Since your business also runs on custom business logic, the solution must be flexible enough to run proprietary code.
+- In the example scenario, your company currently follows a manual approval process for project design proposals. The process has multiple steps, and each step in the process can vary in duration. Implementing an automated process in-house is complex and costly. Coordinating each step takes effort. In addition, you must be able to incorporate custom logic into the workflow.
+
+1. What are Azure Durable function?
+
+- An extension of Azure function that enables you to run long-lasting, stateful operations in a serverless environment.
+- Azure function are stateless, operate in stateless environment while Azure durable function can retain state between function execution
+
+2. Benefits of Azure durable functions
+
+- Allows you to write event driven code, they can wait asynchronously for one or more events to happen then perform a series of task in response to that event.
+- Manages the state for you, you don't write code to manage your state 
+- Chain functions together, you can implement a fan-out/in patterns where one function is used to invoke other functions in parallel then accumulate the results
+- Function orchestration, you can coordinate and orchestrate the order in which the functions should execute
+
+3. Orchestration Function
+
+Durable function allows you to define complex stateful workflows using ORCHESTRATION Function
+
+4. Azure durable function types
+
+- Client function: client function are the entry point of Azure durable function orchestration, they can run in response of event from many source. They can be written in any of the supported languages
+- Orchestrator Function: defines how actions executed and the order in which they should be run. Orchestrator function can be written in C# and JavaScript
+- Activity Function: Contains the actual work performed by the task being orchestrated and constitute the basic unit of work for an azure durable function orchestration
