@@ -1,0 +1,13 @@
+1. Have a subscription
+2. Create a resource group
+3. Create a Function App
+4. Select Publishing mode (code or container)
+5. Select the runtime stack
+6. Specify the verion of the runtime stack
+7. Select the region where the function will be created
+8. Add a function to the function app
+9. For HttpTrigger you need to specify the Authorization level
+Note this Authorization can be provided as a query string parameter name CODe or via the http header X-FUNCTIONS-KEY
+ - Function : uses a function specific key
+ - Anonymous : in this mode your function will be accessible by anyone and won't require a key
+ - Admin : Your function can use both your function key and your host key
