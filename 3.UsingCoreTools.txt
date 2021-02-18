@@ -1,0 +1,46 @@
+Create and run Azure Functions locally by using the Core Tools
+--------------------------------------------------------------
+https://docs.microsoft.com/en-us/learn/modules/develop-test-deploy-azure-functions-with-core-tools/2-create-run-functions-locally-core-tools
+
+- Azure Core tools let you develop and run azure funtion on your local machine
+
+1. What are Azure core tool?
+
+- A set of command line tools you can use to develop and test Azure function on local machine
+
+2. Purpose of Azure Core tools
+
+- Generate files and folders needed to develop Azure function
+- Run debug and test function locally
+- Publish function to Azure
+- Core tools version 2.x is the latest and can be installed on Windows Linux and mac OS and is recommended
+- Azure portal function editor does not support working with function developed locally
+
+3. Create function locally
+
+`- Every function belongs to a function app
+- A function app is a collection of function Publish together in the same environment
+- Every function in the function app share the same set of configuration and are built for the same language runtime
+- A function project is equivalent to a function app in Azure and contain the code and configuration files that define your function.
+
+4. Create new function project
+
+- To create a new function project use FUNC INIT from the command line
+- The tow most critical files in the function project are: host.json and local.settings.json
+- host.json contain the runtime configuration values, like logging option for the function. The settings in this file are use both when running locally on in Azure
+- local.settings.json only contain configuration values for the function app when running locally with core tools
+- local.settings.json contain local runtime settings and custom application settings
+
+5. Create a new function 
+
+- To create a new function within the function project run FUNC NEW from the command line
+
+6. Running function locally
+
+- To run the function locally use the command FUNC START within a function project
+- Functions cannot be run on their own they must be hosted by the functions host
+
+7. Publish function to Azure
+
+- Create a function app in Azure with the same language runtime as the function project
+- Run func azure functionapp publish "$FUNCTIONAPP" from the function project

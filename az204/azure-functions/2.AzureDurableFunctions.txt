@@ -37,3 +37,26 @@ Durable function allows you to define complex stateful workflows using ORCHESTRA
 - Monitor: This pattern implements a recurring process in a workflow, possibly looking for a change in state. For example, you could use this pattern to poll until specific conditions are met.
 
 - Human interaction: This pattern combines automated processes that also involve some human interaction. A manual process within an automated process is tricky because people aren't as highly available and as responsive as most computers. Human interaction can be incorporated using timeouts and compensation logic that runs if the human fails to interact correctly within a specified response time. An approval process is an example of a process that involves human interaction.
+
+6. Comparison between Azure durable function and Azure Logic Apps
+
+- 
+
+7. Design workflow based on durable function
+
+- Refer to this link: https://docs.microsoft.com/en-us/learn/modules/create-long-running-serverless-workflow-with-durable-functions/3-design-a-workflow-based-on-durable-functions
+
+8. Create a workflow using Durable Functions
+
+NOTE: very important review this aggregated
+https://docs.microsoft.com/en-us/learn/modules/create-long-running-serverless-workflow-with-durable-functions/4-exercise-create-a-workflow-using-durable-functions
+
+9. Control long-running tasks using timers
+
+Continuation of the design workflow
+
+https://docs.microsoft.com/en-us/learn/modules/create-long-running-serverless-workflow-with-durable-functions/5-control-long-running-tasks-using-timers
+
+10. Exercise - Add a durable timer to manage a long-running task
+
+https://docs.microsoft.com/en-us/learn/modules/create-long-running-serverless-workflow-with-durable-functions/6-exercise-add-a-durable-timer-to-manage-a-long-running-task
