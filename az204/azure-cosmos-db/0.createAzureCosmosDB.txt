@@ -1,0 +1,45 @@
+Steps to Create an Azure Cosmos DB
+----------------------------------
+
+1. What is an Azure Cosmos DB account?
+
+- Azure Cosmos DB account is an organisation entity for all your dabatases and it's linked to the Azure subscription
+- You specify the API when creating the Azure Cosmos DB account
+
+
+2. What is a request unit (R/U)
+
+- You provision throughput for your Azure Cosmos DB container to run writes, reads and deletes.
+- Throughput can be provisioned for the database and have it share among all containers in that database
+- You can also provision throughput for dedicated container
+- Provisioning throughput for dedicated container is the most frequent option, throughput is evenly distributed among its partitions
+- Azure Cosmos DB measures throughput using the REQUEST UNIT
+- The request unit is measured per second which means request unit per second or RU/s
+- The request unit can be scaled up and down when needed 
+
+
+3. Request unit basics
+
+- A single request unit is approximate the cost of perfoming a single GET operation on a 1 KB document using the document ID.
+- The number of request units consumed change depending on the size of the document, the number of properties in the document, the type of operation 
+being perform, the consistency and indexing policies.
+-
+
+4. Request unit consideration
+
+- Item size : as size of the item increase the number of RU consumed to read and write increase
+- Item indexing : By default each item is indexed, the fewer the indexed items the fewer the RU/s are consumed
+- Item property count : number of RU/s increase as the number of item property count increases
+- Indexed properties : Limit the number of indexing properties to reduce the RU/s
+- Data consistency: strong and bounded staleness consume twice as much RU/s as the rest of the consistency level
+- Query patterns : complexity of query affect how much RU/s is consumed
+- Script usage : 
+- The number of RUs used for a given database operation over the same data does not varies over time.
+- Once you set the number of RU/s, it's impossible to modify this number
+
+
+5. Exceeding throughput Limit
+
+- If you try to use throughput higher than what was provision your request will be rate-limited.
+- When your request is rate-limited it will be retried after an interval
+- .Net SDK retry your request after a certain amount of time using the RETY-AFTER header
