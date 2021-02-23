@@ -1,0 +1,26 @@
+Create an Azure Cosmos DB
+-------------------------
+
+1. Create an Azure Cosmos DB account
+
+az cosmosdb create \
+    --name $name \
+    --Kind GlobalDocumentDB \
+    --resource-group $RESOURCEGROUP
+
+2. Create an Azure Cosmos DB database within the account
+
+az cosmosdb sql database create \
+    --name $PRODUCTS \
+    --account $account \
+    --reouce-group $RESOURCEGROUP
+
+3. Crate an Azure Cosmos DB container within the database
+
+az cosmosdb sql container create \
+    --account $account \
+    --database $database \
+    --name $CONTAINERNAME \
+    --partition-key-path /productId \
+    --throughput 1000 \
+    --resource-group $RESOURCEGROUP

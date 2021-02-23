@@ -1,0 +1,34 @@
+Choose a partition key in Azure Cosmos DB
+-----------------------------------------
+
+0. What is a partition strategy?
+
+- If you continue to add more data to your single server and single partition it will run out of space
+- A partition strategy allows you to add more partitions to your database when you need them.
+- Adding more partition to the DB when you need them is called scale out or Horizontal scaling
+- A partition key defines the partition strategy, it is set when creating a container and cannot be changed.
+- Selecting the right partition key is an important decision in the development process.
+
+1. What is a partition key?
+
+- A partition key is the value by which Azure organises your data in logical divisions
+- A partition key should aim at evenly distributing operations across your database to avoid hot partition
+- A hot partition is a partition that receive many more request than the others 
+- The amount of RU and storage required determine the number of physical partition for the container which is managed by Azure Cosmos DB
+- The size of one physical partition in Azure Cosmos DB is 20GB
+- The storage space for the data associated with each partition cannot exceed 20GB
+- UserID, ProductID are better choices of partition keys over current date time 
+
+2. Best practices
+
+- To determine the partition key for a ready heavy workload, examine the top 3-5 queries you plan to use 
+- Look at the value most included in the WHERE clause as a good canditate for a partition key
+- For write-heavy workloads, you'll need to understand the transactional needs of your workload, because the partition key is the scope of multi-document transactions.
+
+
+3. Review: Choosing a Partition Key
+For each Azure Cosmos DB container, you should specify a partition key that satisfies the following core properties:
+
+- Have a high cardinality. This option allows data to distribute evenly across all physical partitions.
+- Evenly distribute requests. Remember the total number of RU/s is evenly divided across all physical partitions.
+- Evenly distribute storage. Each partition can grow up to 20 GB in size.

@@ -1,0 +1,54 @@
+0. Identify the technology options
+
+- Azure cosmos DB is a globally distributed and elastically scalable DB
+- Azure cosmos DB guarantee low latency that is backed by a set of service level agreements
+- Azure cosmos DB store its data in an ARS (atomic-record sequence) format
+- Azure cosmos DB aleviate the issue with distributed DB by providing 5 types of consistency level (strong, bounded staleness, session, consistent prefix, eventual)
+- Azure cosmos DB support document, key-value, wide range column and graph 
+
+1. CORE (SQL) API
+
+- The CORE SQL API is the default API for Azure cosmos DB
+- The SQL API provides you with a view of your data that resemble traditional NoSQL
+- The SQL API can be used to query your data with a SQL like language
+- The CORE API uses JavaScript's type system.
+
+2. MONGDO DB API
+
+- Azure cosmos DB support the Mongo DB wire protocol
+- Existing Mongo DB client SDKS, drivers and tools can interact with data as if they were interacting with an actual Mongo DB database
+- The data is stored in a document format like the CORE SQL API
+
+3. Cassandra API
+
+- Allow to query data using the CQL (Cassandra Query Language)
+- Data appears to be partitioned row.
+
+
+4. Azure Table API
+
+- Provide support for application written for Azure Table Storage that need premium capabilities like, high availability, scalable throughput, globally distributed
+- Original Azure Table API only allow indexing on partition and row keys and have no secondary indexes.
+- Storing data in Azure cosmos DB requires no index management and all properties are indexed by default;
+- Querying data in TAble API is done using oData and LINQ and REST API for GET operations
+
+5. Gremlin (Graph) API
+
+- Provides a graph based view of the data
+- A graph based view means data are either stored as Vertex (individual item in the DB) or Edge (relationship between items in the DB)
+- Useful when creating product recommendation 
+
+6. Decision criteria
+
+- Are there existing databases or applications that use any of the supported APIs?
+    - If there is, then you might want to consider using the current API with Azure Cosmos DB, as that choice will reduce your migration tasks, and make the best use of previous experience in your team.
+    - If there isn't, then there are a few questions that you can ask in order to help you define the scenario where the database is going to be used:
+
+- Does the schema change a lot?
+    - A traditional document database is a good fit in these scenarios, making Core (SQL) a good choice.
+    - Is there important data about the relationships between items in the database?
+
+- Relationships that require metadata to be stored for them are best represented in a graph database.
+    - Does the data consist of simple key-value pairs?
+    - Before Azure Cosmos DB existed, Redis or the Table API might have been a good fit for this kind of data; however, Core (SQL) API is now the better choice, as it offers a richer query experience, with improved indexing over the Table API.
+
