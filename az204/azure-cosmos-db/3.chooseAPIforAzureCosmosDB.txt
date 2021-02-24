@@ -52,3 +52,17 @@
     - Does the data consist of simple key-value pairs?
     - Before Azure Cosmos DB existed, Redis or the Table API might have been a good fit for this kind of data; however, Core (SQL) API is now the better choice, as it offers a richer query experience, with improved indexing over the Table API.
 
+7. Use CORE API
+https://docs.microsoft.com/en-us/learn/modules/choose-api-for-cosmos-db/4-use-the-core-sql-api-to-store-a-product-catalog
+
+8. Use Gremlin API
+https://docs.microsoft.com/en-us/learn/modules/choose-api-for-cosmos-db/5-use-the-gremlin-graph-api-as-a-recommendation-engine
+
+9. Use Mongo DB
+https://docs.microsoft.com/en-us/learn/modules/choose-api-for-cosmos-db/6-use-the-mongodb-api-to-import-historical-order-data
+
+10. Cassandra API
+https://docs.microsoft.com/en-us/learn/modules/choose-api-for-cosmos-db/7-use-the-cassandra-api-for-web-analytics
+
+11. Use Azure TAble API
+https://docs.microsoft.com/en-us/learn/modules/choose-api-for-cosmos-db/8-use-the-azure-table-api-to-store-iot-data
